@@ -1,0 +1,162 @@
+
+<!-- <img src="{{recipe.hostedLargeUrl }}" alt="image"> -->
+<!-- {{ searchphrase }} -->
+<table>
+<form (submit)="search()">
+  <tr>
+    <td><label for="phrase">Search for a recipe:</label></td>
+    <td><input type="text" name="phrase" [(ngModel)] = "searchphrase"  #phrase="ngModel"></td>
+    <td><input type="submit" value="Search!"></td>
+  </tr>
+  
+  <!-- <tr>
+    <td><label for="cuisine">Cuisine:</label></td>
+    <td><select name="cuisine" [(ngModel)] = "searchcuisine"  #cuisine="ngModel">
+        <option ></option>
+        <option value="american">American</option>
+        <option value="atalian">Italian</option>
+        <option value="asian">Asian</option>
+        <option value="mexican">Mexican</option>
+        <option value="southern">Southern and Soul Food</option>
+        <option value="french">French</option>
+        <option value="southwestern">Southwestern</option>
+        <option value="barbecue">Barbecue</option>
+        <option value="indian">Indian</option>
+        <option value="chinese">Chinese</option>
+        <option value="cajun">Cajun and Creole</option>
+        <option value="english">English</option>
+        <option value="mediterranean">Mediterranean</option>
+        <option value="greek">Greek</option>
+        <option value="spanish">Spanish</option>
+        <option value="german">German</option>
+        <option value="thai">Thai</option>
+        <option value="moroccan">Moroccan</option>
+        <option value="irish">Irish</option>
+        <option value="japanese">Japanese</option>
+        <option value="cuban">Cuban</option>
+        <option value="hawaiin">Hawaiin</option>
+        <option value="swedish">Swedish</option>
+        <option value="hungarian">Hungarian</option>
+        <option value="portugese">Portugese</option>
+
+      </select></td>
+  </tr>
+    <tr>
+      <td><label for="course">Course:</label></td>
+      <td><select name="course" [(ngModel)] = "searchcourse"  #course="ngModel">
+          <option ></option>
+          <option value="Main">Main Dishes</option>
+          <option value="Desserts">Desserts</option>
+          <option value="Side">Side Dishes</option>
+          <option value="Lunch">Lunch and Snacks</option>
+          <option value="Appetizers">Appetizers</option>
+          <option value="Salads">Salads</option>
+          <option value="Breads">Breads</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Soups">Soups</option>
+          <option value="Beverages">Beverages</option>
+          <option value="Condiments">Condiments and Sauces</option>
+          <option value="Cocktails">Cocktails</option>
+        </select></td>
+    </tr>
+      <tr>
+      <td><label for="holiday">Holiday:</label></td>
+      <td><select name="holiday" [(ngModel)] = "searchholiday"  #holiday="ngModel" >
+          <option ></option>
+          <option value="Christmas">Christmas</option>
+          <option value="Thanksgiving">Thanksgiving</option>
+          <option value="NewYear">New Year</option>
+          <option value="SuperBowl">Super Bowl</option>
+          <option value="Halloween">Halloween</option>
+          <option value="Hanukkah">Hanukkah</option>
+          <option value="4th">4th of July</option>
+        </select></td>
+    </tr>
+  <tr>
+    <td><label for="yesingredient">Included Ingredient(s):</label></td>
+    <td><input type="text" name="yesingredient" [(ngModel)] = "include"  #yesingredient="ngModel"></td>
+  </tr>
+  <tr>
+    <td><label for="noingredient">Excluded Ingredient(s):</label></td>
+    <td><input type="text" name="noingredient" [(ngModel)] = "exclude"  #noingredient="ngModel"></td>
+  <tr>
+    <td><label for="allergen">Allergens:</label></td>
+    <td><select name="s" [(ngModel)] = "allergen"  #allergens="ngModel">
+        <option ></option>
+        <option value="396^Dairy-Free">Dairy</option>
+        <option value="397^Egg-Free">Egg</option>
+        <option value="393^Gluten-Free">Gluten</option>
+        <option value="394^Peanut-Free">Peanut</option>
+        <option value="398^Seafood-Free">Seafood</option>
+        <option value="399^Sesame-Free">Sesame</option>
+        <option value="400^Soy-Free">Soy</option>
+        <option value="401^Sulfite-Free">Sulfite</option>
+        <option value="395^Tree Nut-Free">Tree Nut</option>
+        <option value="392^Wheat-Free">Wheat</option>
+      </select></td>
+  </tr>
+  <tr>
+    <td><label for="diet">Diet:</label></td>
+    <td><select name="diet" [(ngModel)] = "searchdiet"  #diet="ngModel">
+        <option ></option>
+        <option value="387^Vegetarian">Vegetarian</option>
+        <option value="388^Lacto vegetarian">Lacto Vegetarian</option>
+        <option value="389^Ovo vegetarian">Ovo Vegetarian</option>
+        <option value="390^Pescatarian">Pescatarian</option>
+        <option value="386^Vegan">Vegan</option>
+      </select></td>
+  </tr>
+  <tr>
+     -->
+    <!-- <td></td>
+  </tr> -->
+</form>
+
+</table>
+
+<!-- <div style="border-style: solid; border-width: 1px; margin: 3px; padding: 5px;" *ngFor="let recipe of recipes.matches">
+{{ recipe.matches}}
+
+
+
+<!-- </div> -->
+<!-- <h2>You have {{ recipes.totalMatchCount }} matches!</h2>  -->
+
+
+     <div style="border-style: solid; border-width: 1px; margin: 3px; padding: 5px;" *ngFor="let recipe of recipes.matches">
+
+  {{ recipe.recipeName }}
+  <img src="{{recipe.smallImageUrls}}" alt="image">
+  <table>
+    <tr>
+      <td>Yields: </td>
+      <td> {{ recipe.yield }}</td>
+    </tr>
+    <tr>
+      <td>Ingredients:</td>
+      <td>{{ recipe.ingredients }}</td>
+    </tr>
+   <tr>
+      <td>Total Time:</td>
+      <td>{{ recipe.totalTime }}</td>
+    </tr>
+    
+    <tr>
+      <td>Rating:</td>
+      <td>{{ recipe.rating }} / 5</td>
+    </tr>
+    <tr>
+      <td>Servings:</td>
+      <td>{{ recipe.numberOfServings }}</td>
+    </tr> 
+      <tr>
+      <td></td>
+      <td><a href="{{ recipe.id }}">View</a></td>
+    </tr> 
+       <!-- <tr>
+      <td></td>
+      <td><a href="{{ recipe.source.sourceRecipeUrl }}">Directions</a></td>
+    </tr>    -->
+    </table> 
+ </div>     
+  

@@ -1,0 +1,47 @@
+<div>
+ <h1>{{ recipe.name }}</h1><br>
+ <button class="btn btn-success" (click)="add()">Add to My Cookbook</button>
+</div>
+<div>
+   <img src="{{recipe.images.hostedLargeUrl}}" alt="image"><br>
+  <table> 
+    <tr>
+      <td>Yields: </td>
+      <td> {{ recipe.yield }}</td>
+    </tr>
+    <tr>
+      <td>Ingredients:</td>
+      <td>{{ recipe.ingredients }}</td>
+    </tr> 
+    <tr>
+      <td>Cook Time:</td>
+      <td>{{ recipe.totalTime }}</td>
+    </tr>
+    
+    <tr>
+      <td>Rating:</td>
+      <td>{{ recipe.rating }} / 5</td>
+    </tr>
+    <tr>
+      <td>Servings:</td>
+      <td>{{ recipe.numberOfServings }}</td>
+    </tr> 
+    
+      
+    </table> 
+ </div>   
+  <br>
+  <br>
+<div >
+    <table >
+      Ingredients:
+      <tr *ngFor="let ingredient of recipe.ingredientLines">
+        <td>{{ ingredient }}</td>
+      </tr>
+    </table>
+  </div>
+   <a href="{{ recipe.source.sourceRecipeUrl }}">Directions</a> 
+  
+  
+
+
